@@ -108,7 +108,7 @@ const Navbar = () => {
           </button>
 
           <button className="ml-2 md:ml-4 flex">
-            <i className="fa-regular fa-heart border border-[#9538E2] bg-white rounded-full p-4 text-black"></i>
+            <i className="fa-regular fa-heart  border border-[#9538E2] bg-white rounded-full p-4 text-black"></i>
             <span className="text-white font-semibold border border-[#9538E2] textColor bg-white w-6 h-6 rounded-full -ml-4">
               0
             </span>
