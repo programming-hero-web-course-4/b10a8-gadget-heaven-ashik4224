@@ -3,8 +3,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 const ProductDetail = () => {
   const { product_id } = useParams();
   const data = useLoaderData();
-  //   const id = parseInt(product_id);
-  //   console.log(typeof product_id,  typeof data[0].product_id);
+
 
   const product = data.find((product) => product.product_id === product_id);
 

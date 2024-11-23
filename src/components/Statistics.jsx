@@ -3,10 +3,10 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Line,} fro
 
 const data = [
   { name: "Dell XPS 13", Price: 80, Total: 100, Rating: 90 },
-  { name: "Dell XPS 13", Price: 60, Total: 90, Rating: 70 },
-  { name: "Dell XPS 13", Price: 70, Total: 80, Rating: 85 },
-  { name: "Dell XPS 13", Price: 90, Total: 100, Rating: 95 },
-  { name: "Dell XPS 13", Price: 80, Total: 90, Rating: 88 },
+  { name: "Asu ROG  G14", Price: 60, Total: 90, Rating: 70 },
+  { name: "Dell XPS 13 Plus", Price: 70, Total: 80, Rating: 85 },
+  { name: "Lenovo Legion 5 ", Price: 90, Total: 100, Rating: 95 },
+  { name: "HP Spectre x360", Price: 80, Total: 90, Rating: 88 },
 ];
 
 const Statistics = () => {
