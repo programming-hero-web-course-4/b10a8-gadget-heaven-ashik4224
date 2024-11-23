@@ -1,7 +1,9 @@
 /* eslint-disable no-undef */
 /* eslint-disable react/prop-types */
+import { MdDelete } from "react-icons/md";
 
 const CartItem = ({ gadget , handleRemove}) => {
+
 
 
     const {  title, image, description, price } = gadget || {}
@@ -18,7 +20,7 @@ const CartItem = ({ gadget , handleRemove}) => {
                     <p className="font-bold text-gray-500">Price: {price}</p>
                 </div>
                 <div className=" rounded-full w-10 h-10 md:-mt-5">
-                    <button ><i onClick={()=> handleRemove(id)} className="fa-regular fa-circle-xmark text-2xl text-red-600"></i></button>
+                <button onClick={()=> handleRemove(id)} className="text-2xl " > <MdDelete /> </button>
                 </div>
             </div>
         </div>
