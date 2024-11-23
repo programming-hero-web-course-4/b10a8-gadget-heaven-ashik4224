@@ -1,59 +1,122 @@
+/* eslint-disable no-unused-vars */
+import { NavLink, useLocation } from "react-router-dom";
 
-const NavBar = () => {
-    return (
-        <div className="navbar bg-base-100">
-  <div className="navbar-start">
-    <div className="dropdown">
-      <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor">
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M4 6h16M4 12h8m-8 6h16" />
-        </svg>
+const Navbar = () => {
+  const location = useLocation();
+
+  // Dashboard
+  const sectionBackgroundClass =
+    location.pathname === "/dashboard" ? "bg-white pt-5 pb-2" : "transfarent";
+
+  const textColorClass =
+    location.pathname === "/dashboard" ? "textColor font-bold" : "text-white";
+
+  // Dashboard/cart
+  const sectionBackground =
+    location.pathname === "/dashboard/cart"
+      ? "bg-white pt-5 pb-2"
+      : "transfarent";
+
+  const textColors =
+    location.pathname === "/dashboard/cart"
+      ? "textColor font-bold"
+      : "text-white";
+
+  // Statistics
+  const stastisticBg =
+    location.pathname === "/statistics" ? "bg-white pt-5 pb-2" : "transfarent";
+
+  const stastisticText =
+    location.pathname === "/statistics" ? "textColor font-bold" : "text-white";
+
+  // Track Order
+  const trackBg =
+    location.pathname === "/track" ? "bg-white pt-5 pb-2" : "transparent";
+
+  const trackText =
+    location.pathname === "/track" ? "textColor font-bold" : "text-white";
+
+  // Wish List
+  const wishBg =
+    location.pathname === "/dashboard/wishlist"
+      ? "bg-white pt-5 pb-2"
+      : "transfarent";
+
+  const wishText =
+    location.pathname === "/dashboard/wishlist"
+      ? "textColor font-bold"
+      : "text-white";
+
+  // Gadget Details
+
+  const links = <>
+        <li><NavLink className={`${textColorClass} ${textColors} ${stastisticText} ${trackText} ${wishText}`} to="/">Home</NavLink></li>
+        <li><NavLink className={`${textColorClass} ${textColors} ${stastisticText} ${trackText} ${wishText}`} to="/statistics">Statistics</NavLink></li>
+        <li><NavLink className={`${textColorClass} ${textColors} ${stastisticText} ${trackText} ${wishText}`} to="/dashboard">Dashboard</NavLink></li>
+        <li><NavLink  to="/about">About</NavLink></li>
+
+
+    </>
+
+  
+  return (
+    <div className={`pt-10   ${sectionBackgroundClass} ${sectionBackground} ${stastisticBg} ${trackBg} ${wishBg}`}>
+      <div className="container navbar  mx-auto bg-[#9538E2]  lg:w-11/12 text-white md:px-16 lg:px-10 ">
+        <div className="navbar-start ml-4 md:ml-0">
+          <div className="dropdown">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn text-white border-none bg-purple-700 mr-3 lg:hidden"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content bg-purple-500 text-white rounded-box z-[1] mt-3 w-60 ml-5 p-2 shadow"
+            >
+              {links}
+            </ul>
+          </div>
+          <NavLink to="/" className="text-xl font-bold">
+            Gadget Heaven
+          </NavLink>
+        </div>
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal px-1">{links}</ul>
+        </div>
+        <div className="navbar-end pr-3 md:pr-0">
+          <button className=" flex">
+            <i className="fa-solid fa-cart-shopping border border-[#9538E2] bg-white rounded-full p-4 text-black"></i>
+            <span className="text-white font-semibold border border-[#9538E2] textColor bg-white w-6 h-6 rounded-full -ml-4">
+              0
+            </span>
+          </button>
+
+          <button className="ml-2 md:ml-4 flex">
+            <i className="fa-regular fa-heart border border-[#9538E2] bg-white rounded-full p-4 text-black"></i>
+            <span className="text-white font-semibold border border-[#9538E2] textColor bg-white w-6 h-6 rounded-full -ml-4">
+              0
+            </span>
+          </button>
+        </div>
       </div>
-      <ul
-        tabIndex={0}
-        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-        <li><a>Item 1</a></li>
-        <li>
-          <a>Parent</a>
-          <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </li>
-        <li><a>Item 3</a></li>
-      </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
-  </div>
-  <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
-      <li><a>Item 1</a></li>
-      <li>
-        <details>
-          <summary>Parent</summary>
-          <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </details>
-      </li>
-      <li><a>Item 3</a></li>
-    </ul>
-  </div>
-  <div className="navbar-end">
-    <a className="btn">Button</a>
-  </div>
-</div>
-    );
+  );
 };
 
-export default NavBar;
+export default Navbar;
