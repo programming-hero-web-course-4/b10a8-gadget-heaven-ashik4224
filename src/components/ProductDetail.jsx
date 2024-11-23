@@ -67,9 +67,9 @@ const ProductDetail = () => {
             <div className=" ml-5 px-5">{rating}</div>
           </div>
          <div className="flex ">
-            <div><button className="btn btn-outline rounded-full bg-[#9538E2] text-white ">Add to Card <i className="fa-solid fa-cart-shopping"></i>  </button></div>
+            <div><button className="btn btn-outline rounded-full bg-[#9538E2] text-white ">Add to Card <i className="fa-solid fa-cart-shopping"></i> </button></div>
           <div className="ml-4 mt-2">
-            <i className="fa-regular fa-heart text-2xl"></i>
+          <i className="fa-regular fa-heart text-2xl"></i>
           </div>
           </div>
         </div>
